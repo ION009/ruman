@@ -1,0 +1,49 @@
+# Dependencies
+**/node_modules/
+**/.pnpm-store/
+
+# Build output
+**/dist/
+**/.next/
+**/out/
+apps/api/bin/
+apps/api/anlticsheat-api
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Env files (keep examples, ignore actuals)
+.env
+.env.local
+.env.*.local
+apps/*/.env.local
+apps/*/.env.*.local
+test/*/.env.local
+test/*/.env.*.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tool-specific
+.blackboxcli/
+rybbit/.git_bak/
+.playwright-mcp/
+
+# pnpm
+pnpm-debug.log
+
+# Go build artifacts
+*.exe
+*.test
+*.prof

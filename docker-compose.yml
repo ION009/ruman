@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.12
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    environment:
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: password
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      ANLTICSHEAT_STORAGE: clickhouse
+      ANLTICSHEAT_CLICKHOUSE_DSN: http://default:password@clickhouse:8123/default
+      ANLTICSHEAT_FLUSH_INTERVAL: 500ms
+    ports:
+      - "8080:8080"
+    depends_on:
+      - clickhouse
+
+volumes:
+  clickhouse-data:

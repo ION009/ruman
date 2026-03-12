@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnlticsHeat Mock Site</title>
+    <style>
+      :root { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      body { margin: 0; background: #f6f7fb; color: #111827; }
+      header { position: sticky; top: 0; z-index: 10; background: #111827; color: #fff; padding: 14px 20px; }
+      main { max-width: 980px; margin: 0 auto; padding: 24px 16px 120px; }
+      .hero { border-radius: 16px; background: linear-gradient(140deg, #1d4ed8, #0891b2); color: #fff; padding: 28px; }
+      .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+      .card { background: #fff; border: 1px solid #dbe1ea; border-radius: 14px; padding: 14px; min-height: 110px; }
+      .btn { border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer; font-weight: 600; }
+      .btn-primary { background: #2563eb; color: #fff; }
+      .btn-secondary { background: #14b8a6; color: #052e2b; }
+      .zone { margin-top: 26px; background: #fff; border: 1px solid #dbe1ea; border-radius: 14px; padding: 16px; }
+      .spacer { height: 900px; margin-top: 28px; border-radius: 14px; background: repeating-linear-gradient(0deg, #eff4ff 0 24px, #f8fbff 24px 48px); border: 1px solid #dbe1ea; }
+      .muted { color: #6b7280; font-size: 13px; }
+      @media (max-width: 850px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+    <script defer src="http://localhost:8080/t.js?id=veoilanna-53de67&snapshot_origin=http%3A%2F%2Flocalhost%3A3000&replay=1&replay_sample=0.1" data-site="veoilanna-53de67" data-snapshots="true"></script>
+  </head>
+  <body>
+    <header>
+      AnlticsHeat Mock Site · <span class="muted" style="color:#cbd5e1">Use this page to generate clicks/moves/scroll</span>
+    </header>
+    <main>
+      <section class="hero" data-track-id="hero-block">
+        <h1 style="margin:0 0 8px">Mock Conversion Page</h1>
+        <p style="margin:0 0 14px">Interact with the sections below, then inspect `/heatmaps` in the dashboard.</p>
+        <button class="btn btn-primary" data-track-id="hero-cta">Start Trial</button>
+      </section>
+
+      <section class="grid">
+        <article class="card" data-track-id="card-a">
+          <h3 style="margin-top:0">Pricing</h3>
+          <button class="btn btn-secondary" id="pricing-toggle">Toggle Plan</button>
+        </article>
+        <article class="card" data-track-id="card-b">
+          <h3 style="margin-top:0">FAQ</h3>
+          <button class="btn" data-track-id="faq-expand">Expand FAQ</button>
+        </article>
+        <article class="card" data-track-id="card-c">
+          <h3 style="margin-top:0">Actions</h3>
+          <a href="#deep" data-track-id="jump-deep">Jump to Deep Section</a>
+        </article>
+      </section>
+
+      <section class="zone" data-track-id="hot-zone-1">
+        <h2 style="margin-top:0">Hover Zone</h2>
+        <p class="muted">Pause mouse here for a couple of seconds to create dwell-time events.</p>
+      </section>
+
+      <div class="spacer" id="deep" data-track-id="deep-scroll"></div>
+
+      <section class="zone" data-track-id="footer-cta">
+        <h2 style="margin-top:0">Bottom CTA</h2>
+        <button class="btn btn-primary" data-track-id="bottom-cta">Checkout</button>
+      </section>
+    </main>
+  </body>
+</html>

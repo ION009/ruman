@@ -1,0 +1,13 @@
+{
+  "name": "anlticsheat",
+  "private": true,
+  "packageManager": "pnpm@10.22.0",
+  "scripts": {
+    "dev:api": "cd apps/api && go run ./cmd/anlticsheat-api",
+    "dev:web": "pnpm --filter @anlticsheat/web dev",
+    "dev:test-site": "pnpm --filter @anlticsheat/mock-test-site dev",
+    "build:web": "pnpm --filter @anlticsheat/web build",
+    "start:web": "pnpm --filter @anlticsheat/web start",
+    "build:tracker": "pnpm --filter @anlticsheat/tracker build"
+  }
+}

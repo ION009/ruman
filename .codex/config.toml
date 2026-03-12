@@ -1,0 +1,36 @@
+# =============================================================
+# Neon Postgres MCP — for user auth, profiles, plans
+# Local setup with API key (no OAuth browser popup)
+# =============================================================
+
+[mcp_servers.neon]
+command = "/opt/homebrew/bin/npx"
+args = ["-y", "@neondatabase/mcp-server-neon", "start", "napi_wrkacktrwv09727g6nvw02acpir9bq74flbqemugcj6vs883fy48ytia7eofo4d3"]
+startup_timeout_sec = 60
+tool_timeout_sec = 120
+enabled = true
+
+# =============================================================
+# Playwright MCP — browser automation for testing
+# =============================================================
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+enabled = true
+
+# =============================================================
+# Stitch MCP — Design-to-code with Stitch
+# =============================================================
+
+[mcp_servers.stitch]
+command = "npx"
+args = ["-y", "@_davideast/stitch-mcp@latest", "proxy"]
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+enabled = true
+
+[mcp_servers.stitch.env]
+STITCH_API_KEY = "AQ.Ab8RN6JQaQboZpfjJK4EPjWtVFikXytwVu5GUdx2VpsBc6zfRw"

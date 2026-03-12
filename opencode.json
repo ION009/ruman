@@ -1,0 +1,53 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "clickhouse": {
+      "type": "local",
+      "command": [
+        "/opt/homebrew/bin/uv",
+        "run",
+        "--with",
+        "chmcp",
+        "--python",
+        "3.13",
+        "chmcp"
+      ],
+      "enabled": true,
+      "timeout": 120000,
+      "environment": {
+        "CLICKHOUSE_HOST": "rgbcfxcmyy.asia-southeast1.gcp.clickhouse.cloud",
+        "CLICKHOUSE_PORT": "8443",
+        "CLICKHOUSE_USER": "default",
+        "CLICKHOUSE_PASSWORD": "nG7dIq.GiCr9L",
+        "CLICKHOUSE_SECURE": "true",
+        "CLICKHOUSE_READONLY": "0",
+        "CLICKHOUSE_ALLOW_WRITE_ACCESS": "true",
+        "CLICKHOUSE_ALLOW_DROP": "true",
+        "CLICKHOUSE_CLOUD_KEY_ID": "PS9B0p72S3amHvN7878Z",
+        "CLICKHOUSE_CLOUD_KEY_SECRET": "4b1d1MpuCt6vg10LiAdqjS7dE4dA7Zl9I4qBKNO1py",
+        "CLICKHOUSE_CLOUD_READONLY": "0"
+      }
+    },
+    "neon": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@neondatabase/mcp-server-neon",
+        "start",
+        "napi_wrkacktrwv09727g6nvw02acpir9bq74flbqemugcj6vs883fy48ytia7eofo4d3"
+      ],
+      "enabled": true,
+      "timeout": 120000
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true,
+      "timeout": 120000
+    }
+  }
+}
