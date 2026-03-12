@@ -1,3 +1,9 @@
+# Large binary / database files (exceed GitHub 50 MB limit)
+**/*.mmdb
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+
 # Dependencies
 **/node_modules/
 **/.pnpm-store/
